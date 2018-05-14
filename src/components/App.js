@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import './Global/css/App.css';
 import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //components 
 import Header from './Global/Header';
 import Content from './Global/Content';
@@ -22,8 +23,10 @@ class App extends Component {
           title="Lutech"
           items={items}
         />
-            <Content body={children} />
-          <Footer />
+        <MuiThemeProvider>
+          <Content body={children} />
+        </MuiThemeProvider>   
+        {/* <Footer /> */}
       </div>
     );
   }

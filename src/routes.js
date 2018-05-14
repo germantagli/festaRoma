@@ -8,12 +8,14 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Page404 from './components/Page404';
 import Home from './components/Home';
+import Login from './components/Login';
 // Container
 
 
 const AppRoutes = () =>
   <App>
     <Switch>
+      <Route  path="/login" component={Login} />  
       <Route  path="/about" component={About} />
       <Route  path="/contact" component={Contact} />
       <Route  path="/" component={Home} />
