@@ -3,7 +3,9 @@ import logo from './images/logo.svg';
 import PropTypes from 'prop-types';
 import './css/Header.css';
 import { Link } from 'react-router-dom';
-
+import Badge from 'material-ui/Badge';
+import IconButton from 'material-ui/IconButton';
+import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 class Header extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
@@ -16,6 +18,7 @@ class Header extends Component {
     return (
       <div className="Header">
       <div className="Logo">
+
         <img src={logo} alt="logo" />
         <h2>{title}</h2>
 
@@ -25,7 +28,19 @@ class Header extends Component {
               (item, key) => <li key={key}><Link to={item.url}>{item.title}</Link></li>
             )
           }
-        </ul>
+        </ul>  
+      </div>
+      <div className="Badge">
+        <Badge
+          badgeContent={10}
+          primary={true}
+          badgeStyle={{ top: 10, right: 10 }}>
+          <IconButton tooltip="Notifications">
+          <NotificationsIcon
+            style={{
+              backgroundColor: '#ffd699',}}/>
+          </IconButton>
+        </Badge>
       </div>
     </div>
     );

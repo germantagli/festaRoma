@@ -19,12 +19,14 @@ class App extends Component {
     const { children } = this.props;
     return (
       <div className="App">
+     
+        <MuiThemeProvider>
         <Header
           title="Lutech"
           items={items}
         />
-        <MuiThemeProvider>
           <Content body={children} />
+          
         </MuiThemeProvider>   
         {/* <Footer /> */}
       </div>
